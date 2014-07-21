@@ -9,23 +9,28 @@
     
 
 
- <a class="back-to-previous" href="/death-location">
+ <a class="back-to-previous" href="/diabetes-treatment">
   <i class="fa fa-angle-left"></i>
   Back <span class="visuallyhidden"> to the previous question</span></a> 
 
 <header>
-  <h1>Did the person die at home, in hospital or elsewhere?</h1>
+  <h1>What type of licence do you have?</h1>
 </header>
 
    <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+        
 
         <label class="selectable">
             <input type="radio" name="death_occur" value="home_or_hospital" class="radio"{{choice_1}}>
-            At home or in hospital
+            I don't have a licence yet
+        </label>
+        <label class="selectable">
+            <input type="radio" name="death_occur" value="home_or_hospital" class="radio"{{choice_1}}>
+            Car or motorcycle licence
         </label>
         <label class="selectable">
             <input type="radio" name="death_occur" value="elsewhere" class="radio"{{choice_2}}>
-            Elsewhere
+            Bus, coach or lorry licence
         </label>
     </fieldset>    
 

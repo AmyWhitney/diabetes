@@ -80,3 +80,36 @@ border: dotted 1px #b8c6cc;
 article tr:nth-child(even) td {
 background-color: #fff;
 }
+
+.hidden_thing {
+  margin-top: 3em;
+  display:none;
+  border-left: #bfc1c3 solid 4px;
+  padding: 14px 0 14px 14px;
+  h1 {
+    @include bold-19;
+    margin-bottom: 0.5em;
+  }
+}
+
+.help-notice {
+padding-top:0.5em;
+background: none;
+background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-187bcc8d8a6d56498c4ac26cadad102d.png) no-repeat scroll 0 0.5em;
+ p {
+  @include bold-19;
+ }
+}
+
+.declare {
+  padding-top: 2em;
+  border-top: 1px solid #dee0e2;
+}
+
+.bold-title {
+  @include bold-19;
+}
+
+.driver-number {
+  padding-bottom: 2em;
+}

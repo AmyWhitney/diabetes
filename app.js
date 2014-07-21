@@ -82,14 +82,14 @@ app.get('/', function (req, res) {
   
 });
 
-app.get('/death-location', function (req, res) {
-  console.log('page /death-location');
+app.get('/diabetes-treatment', function (req, res) {
+  console.log('page /diabetes-treatment');
   console.log('Initial session : ', req.session);
   var head = commonHead;
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/death-occur'
+    'next' : '/license-type'
   };
   if (req.session.death_location) {
     setChecked('death_location', req.session.death_location, reqData);
@@ -99,17 +99,17 @@ app.get('/death-location', function (req, res) {
   if (req.query.edit) {
     reqData.next = '/finish'
   }
-  res.render('death-location', reqData);
+  res.render('diabetes-treatment', reqData);
 });
 
 
-app.get('/death-occur', function (req, res) {
+app.get('/license-type', function (req, res) {
   
   var head = commonHead;
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/expected'
+    'next' : '/hypoglycaemia'
   };
   if (req.session.death_occur) {
     setChecked('death_occur', req.session.death_occur, reqData);
@@ -119,7 +119,7 @@ app.get('/death-occur', function (req, res) {
   if (req.query.edit) {
     reqData.next = '/finish'
   }
-  console.log('page /death-occur');
+  console.log('page /license-type');
   saveRequest(req);
   
   console.log('session : ', req.session);
@@ -128,12 +128,37 @@ app.get('/death-occur', function (req, res) {
   } else if (req.session.death_location == 'Scotland') {
     res.render('finish4', reqData);
   } else {
-    res.render('death-occur', reqData);
+    res.render('license-type', reqData);
   }
 });
 
 
-app.get('/expected', function (req, res) {
+app.get('/hypoglycaemia', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/warning-signs'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/warning-signs'
+  }
+  console.log('page /hypoglycaemia');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('hypoglycaemia', reqData);
+});
+
+
+app.get('/warning-signs', function (req, res) {
   
   var head = commonHead;
   var reqData = {
@@ -149,12 +174,108 @@ app.get('/expected', function (req, res) {
   if (req.query.edit) {
     reqData.next = '/finish'
   }
-  console.log('page /expected');
+  console.log('page /warning-signs');
   saveRequest(req);
 
   console.log('session : ', req.session); 
 
-  res.render('expected', reqData);
+  res.render('warning-signs', reqData);
+});
+
+app.get('/drivers-number', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/finish'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /drivers-number');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('drivers-number', reqData);
+});
+
+app.get('/drivers-details', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/finish'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /drivers-details');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('drivers-details', reqData);
+});
+
+app.get('/who-treats-you', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/finish'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /who-treats-you');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('who-treats-you', reqData);
+});
+
+app.get('/finish', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/finish'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /finish');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('finish', reqData);
 });
 
 

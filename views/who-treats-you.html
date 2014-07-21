@@ -1,0 +1,66 @@
+<main id="content">
+
+      
+   
+
+<form action="{{next}}">
+    
+
+    
+
+
+ <a class="back-to-previous" href="/hypoglycaemia">
+    <i class="fa fa-angle-left"></i>
+    Back <span class="visuallyhidden"> to the previous question</span>
+</a> 
+
+<header>
+  <h1>who treats you</h1>
+</header>
+    
+
+    <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+
+        <label class="selectable">
+            <input type="checkbox" name="hypoglycemia" value="Yes" class="toggler block-label add-focus" {{choice_1}}>
+            Yes
+        </label>
+        <label for="checkbox-1" class="block-label add-focus">
+                <input id="checkbox-1" type="checkbox" value="1">
+                Waste from animal carcasses
+              </label>
+    </fieldset>
+
+    <fieldset class="validate hidden_thing no" data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+
+         <h1>Are you always aware of the symptons?</h1>
+
+        <label class="selectable">
+            <input type="radio" name="expected" value="Yes" class="radio"{{choice_1}}>
+            Yes
+        </label>
+        <label class="selectable">
+            <input type="radio" name="expected" value="No" class="radio"{{choice_2}}>
+            No
+        </label>
+    </fieldset>
+
+    <button type="submit" id="continue" class="button next validation-submit" data-validation-sources="country">
+        Continue
+    </button>
+
+  </form>
+
+ </main>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('input:radio.toggler').change(function(){
+    if ($(this).val() == "Yes") {
+        $('.no').show();
+    } else {
+        $('.no').hide();
+    }
+});
+</script>

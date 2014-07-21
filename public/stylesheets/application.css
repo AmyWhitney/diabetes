@@ -1979,3 +1979,56 @@ article td {
 
 article tr:nth-child(even) td {
   background-color: #fff; }
+
+.hidden_thing {
+  margin-top: 3em;
+  display: none;
+  border-left: #bfc1c3 solid 4px;
+  padding: 14px 0 14px 14px; }
+  .hidden_thing h1 {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: 700;
+    margin-bottom: 0.5em; }
+    @media (max-width: 640px) {
+      .hidden_thing h1 {
+        font-size: 16px;
+        line-height: 1.25; } }
+
+.help-notice {
+  padding-top: 0.5em;
+  background: none;
+  background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-important-187bcc8d8a6d56498c4ac26cadad102d.png) no-repeat scroll 0 0.5em; }
+  .help-notice p {
+    font-family: "nta", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.31579;
+    font-weight: 400;
+    text-transform: none;
+    font-weight: 700; }
+    @media (max-width: 640px) {
+      .help-notice p {
+        font-size: 16px;
+        line-height: 1.25; } }
+
+.declare {
+  padding-top: 2em;
+  border-top: 1px solid #dee0e2; }
+
+.bold-title {
+  font-family: "nta", Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.31579;
+  font-weight: 400;
+  text-transform: none;
+  font-weight: 700; }
+  @media (max-width: 640px) {
+    .bold-title {
+      font-size: 16px;
+      line-height: 1.25; } }
+
+.driver-number {
+  padding-bottom: 2em; }

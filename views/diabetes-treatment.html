@@ -2,7 +2,7 @@
 
   <form action="{{next}}">
     <header class="question-one">
-     <h1>Where did the death happen?</h1>
+     <h1>How is your diabetes treated?</h1>
     </header>
 
     
@@ -10,16 +10,20 @@
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
         <label class="selectable">
-            <input type="radio" name="death_location" value="England or Wales" class="radio"{{choice_1}}>
-            England or Wales
+            <input type="radio" name="diabetes-treatment" value="Tablets" class="radio"{{choice_1}}>
+            Tablets
         </label>
         <label class="selectable">
-            <input type="radio" name="death_location" value="Scotland" class="radio"{{choice_2}}>
-            Scotland
+            <input type="radio" name="diabetes-treatment" value="Insulin injection" class="radio"{{choice_2}}>
+            Insulin injection
         </label>
          <label class="selectable">
-            <input type="radio" name="death_location" value="Northern Ireland" class="radio"{{choice_3}}>
-            Northern Ireland
+            <input type="radio" name="diabetes-treatment" value="Northern Ireland" class="radio"{{choice_3}}>
+            Insulin pump
+        </label>
+        <label class="selectable">
+            <input type="radio" name="diabetes-treatment" value="Northern Ireland" class="radio"{{choice_4}}>
+            Other non injectable
         </label>
     </fieldset>
 
