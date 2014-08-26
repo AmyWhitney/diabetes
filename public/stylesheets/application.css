@@ -2080,10 +2080,3 @@ h3.email {
 .multi {
   padding-top: 2em;
   margin-bottom: 1em; }
-
-  label.binary {
-float: none;
-width: auto;
-display: -moz-inline-stack;
-display: inline-block;
-}
