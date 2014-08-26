@@ -7,6 +7,7 @@
     "express": "~3.4.7",
     "consolidate": "0.x",
     "mustache": "0.x",
+    "request": "2.38.0",
     "node-sass": "0.x",
     "govuk_frontend_toolkit": "0.41.0",
     "govuk_template_mustache": "0.5.1",

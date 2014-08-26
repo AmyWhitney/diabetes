@@ -111,5 +111,66 @@ background: url(https://assets.digital.cabinet-office.gov.uk/static/icon-importa
 }
 
 .driver-number {
-  padding-bottom: 2em;
+  padding-bottom: 1em;
+}
+
+// Checkboxes
+.form-checkbox {
+  display: block;
+  margin: 30px;
+}
+.form-checkbox input {
+  vertical-align: middle;
+  margin: -2px 5px 0 0;
+}
+
+
+.highlighted {
+background: rgb(40, 161, 151);
+color: #fff;
+text-align: center;
+margin: 1em 0 1em 0;
+padding: 1em;
+font-weight: bold;
+display: block;
+max-width: 630px;
+}
+
+.step {
+padding: 0 1em;
+max-width: 630px;
+}
+
+.complete-section {
+margin: 1em 0 1em 0;
+border-top: 1px solid #ccc;
+padding: 2em 0 0 0;
+}
+
+.complete-section.first {
+border: none;
+}
+
+.highlighted h2 {
+margin: 0.5em 0;
+font-size: 32px;
+}
+
+.highlighted .pre-title {
+font-size: 19px;
+}
+
+.reference-number {
+font-size: 32px;
+margin: 0 0 10px 0;
+}
+
+h3.email {
+  margin-bottom: 0.2em;
+
+}
+
+.multi {
+  padding-top: 2em;
+  margin-bottom: 1em;
 }

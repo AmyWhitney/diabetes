@@ -9,24 +9,23 @@
     
 
 
- <a class="back-to-previous" href="/license-type">
+ <a class="back-to-previous" href="/hypoglycaemia">
     <i class="fa fa-angle-left"></i>
     Back <span class="visuallyhidden"> to the previous question</span>
 </a> 
 
 <header>
-  <h1>Have you had more than one episode of hypoglycemia in the last 12 months?</h1>
+  <h1>Do you need to wear glasses or contact lenses when you are driving?</h1>
 </header>
-    
 
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
         <label class="selectable binary">
-            <input type="radio" name="expected" value="Yes" class="radio"{{choice_1}}>
+            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
             Yes
         </label>
         <label class="selectable binary">
-            <input type="radio" name="expected" value="No" class="radio"{{choice_2}}>
+            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
             No
         </label>
     </fieldset>
@@ -38,3 +37,15 @@
   </form>
 
  </main>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('input:radio.toggler').change(function(){
+    if ($(this).val() == "Yes") {
+        $('.no').show();
+    } else {
+        $('.no').hide();
+    }
+});
+</script>

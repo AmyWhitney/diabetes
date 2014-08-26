@@ -164,7 +164,7 @@ app.get('/warning-signs', function (req, res) {
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/finish'
+    'next' : '/vision'
   };
   if (req.session.expected) {
     setChecked('expected', req.session.expected, reqData);
@@ -188,7 +188,7 @@ app.get('/drivers-number', function (req, res) {
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/finish'
+    'next' : '/drivers-details'
   };
   if (req.session.expected) {
     setChecked('expected', req.session.expected, reqData);
@@ -212,7 +212,7 @@ app.get('/drivers-details', function (req, res) {
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/finish'
+    'next' : '/hypoglycaemia'
   };
   if (req.session.expected) {
     setChecked('expected', req.session.expected, reqData);
@@ -236,7 +236,7 @@ app.get('/who-treats-you', function (req, res) {
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/finish'
+    'next' : '/doctors-details'
   };
   if (req.session.expected) {
     setChecked('expected', req.session.expected, reqData);
@@ -254,13 +254,177 @@ app.get('/who-treats-you', function (req, res) {
   res.render('who-treats-you', reqData);
 });
 
-app.get('/finish', function (req, res) {
+app.get('/consultants-details', function (req, res) {
   
   var head = commonHead;
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
     'next' : '/finish'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /consultants-details');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('consultants-details', reqData);
+});
+
+app.get('/vision', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/vision2'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /vision');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('vision', reqData);
+});
+
+app.get('/vision2', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/vision3'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/doctors'
+  }
+  console.log('page /vision2');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('vision2', reqData);
+});
+
+app.get('/vision3', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/who-treats-you'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /vision3');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('vision3', reqData);
+});
+
+app.get('/complete', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/finish'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/finish'
+  }
+  console.log('page /complete');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('complete', reqData);
+});
+
+app.get('/doctors-details', function (req, res) {
+  
+  var head = commonHead;
+
+  var postcode = req.query.postcode;
+
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/consultants-details'
+  };
+  var request = require('request');
+  request('http://www.doctorsnear.org/'+postcode+'.json', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      try{
+        var data = JSON.parse(body);
+        console.dir(data);
+        reqData.postcode=data.location;
+        reqData.doctors=data.doctors.slice(0,15);
+
+      } catch (err){
+        console.log(err);
+      }
+
+      if (req.session.expected) {
+        setChecked('expected', req.session.expected, reqData);
+      } else {
+        setChecked('expected', '', reqData);
+      }
+      if (req.query.edit) {
+        reqData.next = '/finish'
+      }
+      console.log('page /doctors-details');
+      saveRequest(req);
+
+      console.log('session : ', req.session); 
+
+      res.render('doctors-details', reqData);
+
+    }
+  })
+  
+});
+
+app.get('/finish', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
+    'next' : '/complete'
   };
   if (req.session.expected) {
     setChecked('expected', req.session.expected, reqData);

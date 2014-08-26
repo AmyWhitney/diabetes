@@ -1,0 +1,52 @@
+<main id="content">
+
+      
+   
+
+<form action="{{next}}">
+    
+
+    
+
+
+ <a class="back-to-previous" href="/hypoglycaemia">
+    <i class="fa fa-angle-left"></i>
+    Back <span class="visuallyhidden"> to the previous question</span>
+</a> 
+
+<header>
+  <h1>Find your GP</h1>
+</header>
+    
+
+<p>
+    <span class="bold-title">Postcode</span><br>
+    <span class="postcode">{{postcode}}</span>
+    <a href="/register-to-vote/address" class="change-postcode-button">
+        Change<span class="visuallyhidden"> your postcode</span>
+    </a>
+</p>
+
+<div class="confirmation">   
+{{#doctors}}
+   <div>
+    <p style="float:right;"><button class="button">This is my GP</button></p>
+  <p style="clear:none;"><span class="bold-title">{{name}}</span><br>
+    {{#address}}
+        {{.}}<br>
+    {{/address}}
+    {{postcode}}<br>
+    {{phone}}</p>
+
+{{/doctors}}
+</div>
+<div class="confirmation">
+<p><a href="">I can't find my surgery in the list</a></p>
+</div>
+</div>
+
+  </form>
+
+ </main>
+
+

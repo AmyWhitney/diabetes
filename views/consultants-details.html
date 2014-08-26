@@ -1,0 +1,92 @@
+<main id="content">
+
+      
+   
+
+<form action="{{next}}">
+    
+
+    
+
+
+ <a class="back-to-previous" href="/hypoglycaemia">
+    <i class="fa fa-angle-left"></i>
+    Back <span class="visuallyhidden"> to the previous question</span>
+</a> 
+
+<header>
+  <h1>Have you been seen by a consultant in the last 12 months?</h1>
+</header>
+    
+
+    <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+
+        <label class="selectable binary">
+            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
+            Yes
+        </label>
+        <label class="selectable binary">
+            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
+            No
+        </label>
+    </fieldset>
+
+    <fieldset class="validate hidden_thing no" data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+
+         <h1>Consultants details</h1>
+
+
+        <label for="name_firstName">
+            Consultants name
+        </label>
+        <div class="validation-wrapper ">
+            <input type="text" id="name_firstName" name="name.firstName" value="" autocomplete="off" class="text first-name long validate " data-validation-name="firstName" data-validation-type="field" data-validation-rules="nonEmpty firstNameText">
+        </div>
+
+        <label for="name_middleNames">
+            Consultants address
+        </label>
+        <div class="validation-wrapper ">
+          <input type="text" id="name_middleNames" name="name.middleNames" value="" autocomplete="off" class="text  middle-names long validate " data-validation-name="middleName" data-validation-type="field" data-validation-rules="middleNameText">
+        </div>
+        <div class="validation-wrapper ">
+          <input type="text" id="name_middleNames" name="name.middleNames" value="" autocomplete="off" class="text  middle-names long validate " data-validation-name="middleName" data-validation-type="field" data-validation-rules="middleNameText">
+        </div>
+        <div class="validation-wrapper ">
+          <input type="text" id="name_middleNames" name="name.middleNames" value="" autocomplete="off" class="text  middle-names long validate " data-validation-name="middleName" data-validation-type="field" data-validation-rules="middleNameText">
+        </div>
+
+        <label for="name_lastName">
+            Consultants postcode
+        </label>
+        <div class="validation-wrapper ">
+            <input type="text" id="name_lastName" name="name.lastName" value="" autocomplete="off" class="text last-name long validate " data-validation-name="lastName" data-validation-type="field" data-validation-rules="nonEmpty lastNameText">
+        </div>
+
+     <label for="name_lastName">
+            Consultants telephone number
+        </label>
+        <div class="validation-wrapper ">
+            <input type="text" id="name_lastName" name="name.lastName" value="" autocomplete="off" class="text last-name long validate " data-validation-name="lastName" data-validation-type="field" data-validation-rules="nonEmpty lastNameText">
+        </div>
+    </fieldset>
+
+    <button type="submit" id="continue" class="button next validation-submit" data-validation-sources="country">
+        Continue
+    </button>
+
+  </form>
+
+ </main>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('input:radio.toggler').change(function(){
+    if ($(this).val() == "Yes") {
+        $('.no').show();
+    } else {
+        $('.no').hide();
+    }
+});
+</script>
