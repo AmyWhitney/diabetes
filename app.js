@@ -103,36 +103,6 @@ app.get('/diabetes-treatment', function (req, res) {
 });
 
 
-app.get('/license-type', function (req, res) {
-  
-  var head = commonHead;
-  var reqData = {
-    'pageTitle': 'sample',
-    'head' : head,
-    'next' : '/hypoglycaemia'
-  };
-  if (req.session.death_occur) {
-    setChecked('death_occur', req.session.death_occur, reqData);
-  } else {
-    setChecked('death_occur', '', reqData);
-  }
-  if (req.query.edit) {
-    reqData.next = '/finish'
-  }
-  console.log('page /license-type');
-  saveRequest(req);
-  
-  console.log('session : ', req.session);
-  if (req.session.death_location == 'Northern Ireland') {
-    res.render('finish5', reqData);
-  } else if (req.session.death_location == 'Scotland') {
-    res.render('finish4', reqData);
-  } else {
-    res.render('license-type', reqData);
-  }
-});
-
-
 app.get('/hypoglycaemia', function (req, res) {
   
   var head = commonHead;
@@ -164,7 +134,7 @@ app.get('/warning-signs', function (req, res) {
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/vision'
+    'next' : '/complete'
   };
   if (req.session.expected) {
     setChecked('expected', req.session.expected, reqData);
@@ -254,101 +224,6 @@ app.get('/who-treats-you', function (req, res) {
   res.render('who-treats-you', reqData);
 });
 
-app.get('/consultants-details', function (req, res) {
-  
-  var head = commonHead;
-  var reqData = {
-    'pageTitle': 'sample',
-    'head' : head,
-    'next' : '/finish'
-  };
-  if (req.session.expected) {
-    setChecked('expected', req.session.expected, reqData);
-  } else {
-    setChecked('expected', '', reqData);
-  }
-  if (req.query.edit) {
-    reqData.next = '/finish'
-  }
-  console.log('page /consultants-details');
-  saveRequest(req);
-
-  console.log('session : ', req.session); 
-
-  res.render('consultants-details', reqData);
-});
-
-app.get('/vision', function (req, res) {
-  
-  var head = commonHead;
-  var reqData = {
-    'pageTitle': 'sample',
-    'head' : head,
-    'next' : '/vision2'
-  };
-  if (req.session.expected) {
-    setChecked('expected', req.session.expected, reqData);
-  } else {
-    setChecked('expected', '', reqData);
-  }
-  if (req.query.edit) {
-    reqData.next = '/finish'
-  }
-  console.log('page /vision');
-  saveRequest(req);
-
-  console.log('session : ', req.session); 
-
-  res.render('vision', reqData);
-});
-
-app.get('/vision2', function (req, res) {
-  
-  var head = commonHead;
-  var reqData = {
-    'pageTitle': 'sample',
-    'head' : head,
-    'next' : '/vision3'
-  };
-  if (req.session.expected) {
-    setChecked('expected', req.session.expected, reqData);
-  } else {
-    setChecked('expected', '', reqData);
-  }
-  if (req.query.edit) {
-    reqData.next = '/doctors'
-  }
-  console.log('page /vision2');
-  saveRequest(req);
-
-  console.log('session : ', req.session); 
-
-  res.render('vision2', reqData);
-});
-
-app.get('/vision3', function (req, res) {
-  
-  var head = commonHead;
-  var reqData = {
-    'pageTitle': 'sample',
-    'head' : head,
-    'next' : '/who-treats-you'
-  };
-  if (req.session.expected) {
-    setChecked('expected', req.session.expected, reqData);
-  } else {
-    setChecked('expected', '', reqData);
-  }
-  if (req.query.edit) {
-    reqData.next = '/finish'
-  }
-  console.log('page /vision3');
-  saveRequest(req);
-
-  console.log('session : ', req.session); 
-
-  res.render('vision3', reqData);
-});
 
 app.get('/complete', function (req, res) {
   
