@@ -18,45 +18,51 @@
   <h1>Can you read a car numberplate from 20 meters away in good light, with contact lenses or glasses if worn?</h1>
 </header>
 
+    <div>
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
+            <input type="radio" name="meter" value="Yes" class="radio" {{choice_1}}>
             Yes
         </label>
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
+            <input type="radio" name="meter" value="No" class="radio" {{choice_2}}>
             No
         </label>
     </fieldset>
+</div>
 
     <h1 class="multi">Has your doctor or optician advised you not to drive?</h1>
-
+<div>
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
+            <input type="radio" name="doctor" value="Yes" class="radio" {{choice_3}}>
             Yes
         </label>
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
+            <input type="radio" name="doctor" value="No" class="radio" {{choice_4}}>
             No
         </label>
     </fieldset>
+</div>
 
     <h1 class="multi">Are you registered blind or partially sighted?</h1>
 
+
+<div>
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
+            <input type="radio" name="blind" value="Yes" class="radio" {{choice_5}}>
             Yes
         </label>
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
+            <input type="radio" name="blind" value="No" class="radio" {{choice_6}}>
             No
         </label>
     </fieldset>
+</div>
 
     <button type="submit" id="continue" class="button next validation-submit" data-validation-sources="country">
         Continue

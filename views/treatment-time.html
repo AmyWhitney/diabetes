@@ -9,14 +9,15 @@
     
 
 
- <a class="back-to-previous" href="/vision">
+ <a class="back-to-previous" href="/hypoglycaemia">
     <i class="fa fa-angle-left"></i>
     Back <span class="visuallyhidden"> to the previous question</span>
 </a> 
 
 <header>
-  <h1>Do you need to wear glasses or contact lenses when you are driving?</h1>
+  <h1>Do you get warning signs of hypoglycemia?</h1>
 </header>
+    
 
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
@@ -30,16 +31,16 @@
         </label>
     </fieldset>
 
-    <h1 class="multi">Have you had laser treatment or injections into your eyes?</h1>
+    <fieldset class="validate hidden_thing no" data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
-    <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+         <h1>Are you always aware of the symptons?</h1>
 
         <label class="selectable binary">
-            <input type="radio" name="laser" value="Yes" class="toggler radio" {{choice_1}}>
+            <input type="radio" name="expected" value="Yes" class="radio"{{choice_1}}>
             Yes
         </label>
         <label class="selectable binary">
-            <input type="radio" name="laser" value="No" class="toggler radio" {{choice_2}}>
+            <input type="radio" name="expected" value="No" class="radio"{{choice_2}}>
             No
         </label>
     </fieldset>
