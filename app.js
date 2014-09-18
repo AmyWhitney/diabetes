@@ -139,6 +139,30 @@ app.get('/hypoglycaemia', function (req, res) {
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
+    'next' : '/servere-hypoglycaemia'
+  };
+  if (req.session.expected) {
+    setChecked('expected', req.session.expected, reqData);
+  } else {
+    setChecked('expected', '', reqData);
+  }
+  if (req.query.edit) {
+    reqData.next = '/servere-hypoglycaemia'
+  }
+  console.log('page /hypoglycaemia');
+  saveRequest(req);
+
+  console.log('session : ', req.session); 
+
+  res.render('hypoglycaemia', reqData);
+});
+
+app.get('/servere-hypoglycaemia', function (req, res) {
+  
+  var head = commonHead;
+  var reqData = {
+    'pageTitle': 'sample',
+    'head' : head,
     'next' : '/warning-signs'
   };
   if (req.session.expected) {
@@ -149,14 +173,13 @@ app.get('/hypoglycaemia', function (req, res) {
   if (req.query.edit) {
     reqData.next = '/warning-signs'
   }
-  console.log('page /hypoglycaemia');
+  console.log('page /servere-hypoglycaemia');
   saveRequest(req);
 
   console.log('session : ', req.session); 
 
-  res.render('hypoglycaemia', reqData);
+  res.render('servere-hypoglycaemia', reqData);
 });
-
 
 app.get('/warning-signs', function (req, res) {
   

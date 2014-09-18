@@ -30,33 +30,28 @@
         </label>
     </fieldset>
 
-    <h1 class="multi">Has your doctor or optician advised you not to drive?</h1>
+    <h1 class="multi">Has your doctor or optician told you that your eyesight isn't good enough to drive?</h1>
 
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
+            <input type="radio" name="drive" value="Yes" class="toggler radio" {{choice_1}}>
             Yes
         </label>
         <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
+            <input type="radio" name="drive" value="No" class="toggler radio" {{choice_2}}>
             No
         </label>
     </fieldset>
 
-    <h1 class="multi">Are you registered blind or partially sighted?</h1>
-
-    <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
-
-        <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
-            Yes
-        </label>
-        <label class="selectable binary">
-            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
-            No
-        </label>
-    </fieldset>
+    <details class="details-top">
+            <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="false"><span class="summary">How good does my eyesight need to be?</span></summary>
+            <div class="panel-indent" id="details-content-0" aria-hidden="true">
+              <p>
+                You need a 'visual acuity' of at least 6/12. That means you need to be able to read the fifth line on the eye chatt.
+              </p>
+            </div>
+     </details>
 
     <button type="submit" id="continue" class="button next validation-submit" data-validation-sources="country">
         Continue

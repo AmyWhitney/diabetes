@@ -1,0 +1,85 @@
+<main id="content">
+
+      
+   
+
+<form action="{{next}}">
+    
+
+    
+
+
+ <a class="back-to-previous" href="/hypoglycaemia">
+    <i class="fa fa-angle-left"></i>
+    Back <span class="visuallyhidden"> to the previous question</span>
+</a> 
+
+<header>
+  <h1>Have you had more than one episode of severe hypoglycemia?</h1>
+</header>
+<p>A severe episode means you need help from someone else.</p>
+    
+
+    <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+
+        <label class="selectable binary">
+            <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
+            Yes
+        </label>
+        <label class="selectable binary">
+            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
+            No
+        </label>
+    </fieldset>
+
+    <fieldset class="validate hidden_thing no" data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
+
+         <h1>When was the most recent episode?</h1>
+
+        <fieldset class="validate inline-fields" data-validation-name="dateOfBirthDate" data-validation-type="fieldset" data-validation-rules="allNonEmpty" data-validation-children="day month year">
+
+      <span class="day field-wrapper">
+        <label for="dob_dob_day" class="">
+            Day
+        </label>
+        <input type="number" id="dob_dob_day" name="dob.dob.day" value="" autocomplete="off" class="text  day validate " data-validation-name="day" data-validation-type="field" data-validation-rules="nonEmpty">
+      </span>
+
+      <span class="month field-wrapper">
+        <label for="dob_dob_month" class="">
+            Month
+        </label>
+        <input type="number" id="dob_dob_month" name="dob.dob.month" value="" autocomplete="off" class="text  month validate " data-validation-name="month" data-validation-type="field" data-validation-rules="nonEmpty">
+      </span>
+
+      <span class="year field-wrapper">
+        <label for="dob_dob_year" class="">
+            Year
+        </label>
+        <input type="number" id="dob_dob_year" name="dob.dob.year" value="" autocomplete="off" class="text  year text validate " data-validation-name="year" data-validation-type="field" data-validation-rules="nonEmpty">
+      </span>
+
+        <p class="example">For example: <span class="date">31 3 1970</span></p>
+    </fieldset>
+    </fieldset>
+
+    <button type="submit" id="continue" class="button next validation-submit" data-validation-sources="country">
+        Continue
+    </button>
+
+  </form>
+
+ </main>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$('input:radio.toggler').change(function(){
+    if ($(this).val() == "Yes") {
+        $('.no').show();
+    } else {
+        $('.no').hide();
+    }
+});
+</script>
+
