@@ -15,19 +15,23 @@
 </a> 
 
 <header>
-  <h1>Have you been seen by a consultant in the last 12 months?</h1>
+  <h1>Other than your GP, who do you see for your diabetes care?</h1>
 </header>
     
 
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
-        <label class="selectable binary">
+        <label class="selectable">
             <input type="radio" name="hypoglycemia" value="Yes" class="toggler radio" {{choice_1}}>
-            Yes
+            Consultant
         </label>
-        <label class="selectable binary">
+        <label class="selectable">
             <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
-            No
+            Nurse at hospital clinic
+        </label>
+        <label class="selectable">
+            <input type="radio" name="hypoglycemia" value="No" class="toggler radio" {{choice_2}}>
+            Nurse at your GP's office
         </label>
     </fieldset>
 
