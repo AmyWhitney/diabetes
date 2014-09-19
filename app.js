@@ -134,7 +134,7 @@ app.get('/warning-signs', function (req, res) {
   var reqData = {
     'pageTitle': 'sample',
     'head' : head,
-    'next' : '/complete'
+    'next' : '/finish'
   };
   if (req.session.expected) {
     setChecked('expected', req.session.expected, reqData);

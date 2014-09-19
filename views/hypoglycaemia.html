@@ -15,24 +15,19 @@
 </a> 
 
 <header>
-  <h1>Have you had more than one episode of hypoglycemia in the last 12 months?</h1>
+  <h1>Have you ever had an episode of hypoglycemia?</h1>
 </header>
-<p>eg sweating, shakiness, hungry, palpitations, tingling lips</p>
     
 
     <fieldset class="validate " data-validation-name="country" data-validation-type="fieldset" data-validation-rules="atLeastOneNonEmpty" data-validation-children="england scotland wales northernIreland britishIslands abroad">
 
-        <label class="selectable">
+        <label class="selectable binary">
             <input type="radio" name="expected" value="Yes" class="radio"{{choice_1}}>
             Yes
         </label>
-        <label class="selectable">
+        <label class="selectable binary">
             <input type="radio" name="expected" value="No" class="radio"{{choice_2}}>
             No
-        </label>
-        <label class="selectable">
-            <input type="radio" name="expected" value="No" class="radio"{{choice_2}}>
-            I don't know
         </label>
     </fieldset>
 
