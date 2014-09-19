@@ -2080,27 +2080,3 @@ h3.email {
 .multi {
   padding-top: 2em;
   margin-bottom: 1em; }
-
-.details {
-display: block;
-}
-
-.summary {
-display: inline-block;
-text-decoration: underline;
-color: #005ea5;
-cursor: pointer;
-position: relative;
-margin-bottom: 0.26316em;
-}
-
-.panel-indent {
-clear: both;
-border-left: 4px solid #bfc1c3;
-padding: 10px 0 10px 15px;
-margin: 30px 15px 45px 0;
-}
-
-.details-top {
-  padding-top: 2em;
-}
